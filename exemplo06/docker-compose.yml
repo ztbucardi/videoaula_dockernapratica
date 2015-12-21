@@ -1,0 +1,19 @@
+wordpress:
+  image: wordpress
+  links:
+    - db:mysql
+  environment:
+    WORDPRESS_DB_HOST: mysql
+    WORDPRESS_DB_USER: root
+    WORDPRESS_DB_PASSWORD: 12345
+  volumes:
+    - /usr/src/exemplos/exemplo05/wordpress_data:/var/www/html
+  ports:
+    - 8080:80
+
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: 12345
+  volumes:
+    - /usr/src/exemplos/exemplo05/mysql_data:/var/lib/mysql 
