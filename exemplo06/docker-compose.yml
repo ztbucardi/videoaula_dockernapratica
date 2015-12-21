@@ -9,7 +9,7 @@ wordpress:
   volumes:
     - /usr/src/exemplos/exemplo05/wordpress_data:/var/www/html
   ports:
-    - 8080:80
+    - 80:80
 
 db:
   image: mysql
